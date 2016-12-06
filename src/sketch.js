@@ -11,19 +11,17 @@ function draw() {
   snake.show();
 }
 
-function Snake(){
-    this.x = 0;
-    this.y = 0;
-    this.xSpeed = 1;
-    this.ySpeed = 0;
-
-    this.update = function(){
-        this.x = this.x + this.xSpeed;
-        this.y = this.y + this.ySpeed;
+function keyPressed(){
+    if(keyCode === UP_ARROW){
+        snake.dir(0, -1);
     }
-
-    this.show = function(){
-        fill(255);
-        rect(this.x, this.y, 10, 10);
+    else if(keyCode === DOWN_ARROW){
+        snake.dir(0, 1);
+    }
+    else if(keyCode === RIGHT_ARROW){
+        snake.dir(1, 0)
+    }
+    else if(keyCode === LEFT_ARROW){
+        snake.dir(-1, 0);
     }
 }
